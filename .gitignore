@@ -2,4 +2,10 @@ build/*
 .gradle/*
 .idea/*
 kodilla-testing/build/*
-
+**/out/
+**/build/
+.idea
+*.iws
+*.iml
+*.ipr
+/out/
