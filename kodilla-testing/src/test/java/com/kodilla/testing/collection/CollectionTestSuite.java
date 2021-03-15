@@ -2,10 +2,7 @@ package com.kodilla.testing.collection;
 
 import org.junit.jupiter.api.*;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class CollectionTestSuite {
     @BeforeEach
@@ -25,7 +22,7 @@ public class CollectionTestSuite {
         List<Integer> list2;
         list2 = oddNumbersExterminator.exterminate(list1);
 
-        Assertions.assertEquals(null,list2);
+        Assertions.assertEquals(new ArrayList<>(),list2);
     }
     @DisplayName("when create SimpleUser with infill array by random values, " +
             "then exterminate should return true")
