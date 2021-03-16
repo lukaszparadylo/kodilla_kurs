@@ -23,12 +23,10 @@ public class ShapeCollectorTestSuite {
     @DisplayName("Tests for adding figure")
     @Test
     public void testAddFigure(){
-        boolean testOk;
         ShapeCollector shapeCollector = new ShapeCollector();
         Shape shape1 = new Circle();
-        testOk = shapeCollector.addFigure(shape1);
+        shapeCollector.addFigure(shape1);
         Assertions.assertSame(shapeCollector.getFigure(0), shape1);
-        Assertions.assertEquals(true,testOk);
     }
     @DisplayName("Tests for removing figure")
     @Test
@@ -43,7 +41,6 @@ public class ShapeCollectorTestSuite {
     @DisplayName("Tests getting figure")
     @Test
     public void testGetFigure(){
-        boolean testOk;
         ShapeCollector shapeCollector = new ShapeCollector();
         Shape shape1 = new Circle();
         Shape shape2;
@@ -57,7 +54,15 @@ public class ShapeCollectorTestSuite {
         boolean testOk;
         ShapeCollector shapeCollector = new ShapeCollector();
         Shape shape1 = new Circle();
+        Shape shape2 = new Triangle();
+        Shape shape3 = new Square();
         shapeCollector.addFigure(shape1);
-        Assertions.assertSame(new Circle(),shapeCollector.getFigure(0));
+        shapeCollector.addFigure(shape2);
+        shapeCollector.addFigure(shape3);
+        testOk = shapeCollector.showFigures();
+        Assertions.assertEquals(new Circle().hashCode(),shapeCollector.getFigure(0).hashCode());
+        Assertions.assertEquals(new Triangle().hashCode(),shapeCollector.getFigure(1).hashCode());
+        Assertions.assertEquals(new Square().hashCode(),shapeCollector.getFigure(2).hashCode());
+        Assertions.assertTrue(testOk);
     }
 }

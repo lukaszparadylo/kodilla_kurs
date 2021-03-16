@@ -3,11 +3,16 @@ package com.kodilla.testing.shape;
 public class Triangle implements Shape {
     @Override
     public String getShapeName() {
-        return null;
+        return getClass().toString();
     }
 
     @Override
     public Double getField() {
-        return null;
+        return (double) hashCode();
+    }
+
+    @Override
+    public int hashCode() {
+        return 300;
     }
 }
