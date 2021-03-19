@@ -24,7 +24,7 @@ public class ShapeCollectorTestSuite {
     @Test
     public void testAddFigure(){
         ShapeCollector shapeCollector = new ShapeCollector();
-        Shape shape1 = new Circle();
+        Shape shape1 = new Circle(5.0);
         shapeCollector.addFigure(shape1);
         Assertions.assertSame(shapeCollector.getFigure(0), shape1);
     }
@@ -33,7 +33,7 @@ public class ShapeCollectorTestSuite {
     public void testRemoveFigure(){
         boolean testOk;
         ShapeCollector shapeCollector = new ShapeCollector();
-        Shape shape1 = new Circle();
+        Shape shape1 = new Circle(5.0);
         shapeCollector.addFigure(shape1);
         testOk = shapeCollector.removeFigure(shape1);
         Assertions.assertTrue(testOk);
@@ -42,7 +42,7 @@ public class ShapeCollectorTestSuite {
     @Test
     public void testGetFigure(){
         ShapeCollector shapeCollector = new ShapeCollector();
-        Shape shape1 = new Circle();
+        Shape shape1 = new Circle(5.0);
         Shape shape2;
         shapeCollector.addFigure(shape1);
         shape2 = shapeCollector.getFigure(0);
@@ -53,16 +53,16 @@ public class ShapeCollectorTestSuite {
     public void testShowFigures(){
         boolean testOk;
         ShapeCollector shapeCollector = new ShapeCollector();
-        Shape shape1 = new Circle();
-        Shape shape2 = new Triangle();
-        Shape shape3 = new Square();
+        Shape shape1 = new Circle(5.0);
+        Shape shape2 = new Triangle(5.0,5.0);
+        Shape shape3 = new Square(5.0);
         shapeCollector.addFigure(shape1);
         shapeCollector.addFigure(shape2);
         shapeCollector.addFigure(shape3);
         testOk = shapeCollector.showFigures();
-        Assertions.assertEquals(new Circle().hashCode(),shapeCollector.getFigure(0).hashCode());
-        Assertions.assertEquals(new Triangle().hashCode(),shapeCollector.getFigure(1).hashCode());
-        Assertions.assertEquals(new Square().hashCode(),shapeCollector.getFigure(2).hashCode());
+        Assertions.assertEquals(new Circle(5.0).getField(),shapeCollector.getFigure(0).getField());
+        Assertions.assertEquals(new Triangle(5.0,5.0).getField(),shapeCollector.getFigure(1).getField());
+        Assertions.assertEquals(new Square(5.0).getField(),shapeCollector.getFigure(2).getField());
         Assertions.assertTrue(testOk);
     }
 }

@@ -1,7 +1,10 @@
 package com.kodilla.testing.shape;
 
 public class Square implements Shape{
-
+    private Double squareField;
+    Square(Double a){
+        this.squareField = a * a;
+    }
     @Override
     public String getShapeName() {
 
@@ -9,7 +12,7 @@ public class Square implements Shape{
     }
     @Override
     public Double getField() {
-        return (double) hashCode();
+        return squareField;
     }
 
     @Override
