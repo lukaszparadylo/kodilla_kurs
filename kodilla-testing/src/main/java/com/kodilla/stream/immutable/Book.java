@@ -1,5 +1,5 @@
 package com.kodilla.stream.immutable;
-
+//class is final
 public final class Book {
 
     private final String title;
