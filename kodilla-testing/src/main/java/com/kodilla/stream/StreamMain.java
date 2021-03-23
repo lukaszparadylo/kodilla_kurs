@@ -33,7 +33,7 @@ public class StreamMain {
             Map<Integer, ForumUser> usersList = new HashMap<>();
             usersList = forum.getUsers().stream()
                     .filter(forumUser -> forumUser.getUserSex() == 'M')
-                    .filter(forumUser -> forumUser.getDateOfBirth().isBefore(LocalDate.of(2001,3,20)))
+                    .filter(forumUser -> forumUser.getDateOfBirth().isBefore(LocalDate.now().minusYears(20)))
                     .filter(forumUser -> forumUser.getNumberOfPosts()>0)
                     .collect(Collectors.toMap(ForumUser::getUserId,forumUser -> forumUser));
 
