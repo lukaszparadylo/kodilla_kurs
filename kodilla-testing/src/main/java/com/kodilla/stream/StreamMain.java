@@ -43,4 +43,5 @@ public class StreamMain {
                             " |Number of posts: "+entry.getValue().getNumberOfPosts()+ " |Date of birth: "+entry.getValue().getDateOfBirth()+"|")                   // [3]
                     .forEach(System.out::println);
         }
+
 }

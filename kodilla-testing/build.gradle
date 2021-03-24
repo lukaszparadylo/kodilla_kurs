@@ -15,7 +15,7 @@ dependencies {
     testImplementation group: 'org.mockito', name: 'mockito-junit-jupiter', version: '3.7.7'
     implementation group: 'com.fazecast', name: 'jSerialComm', version: '2.6.2'
     implementation group: 'com.github.kochedykov', name: 'jlibmodbus', version: '1.2.9.0'
-
+    implementation group: 'io.vavr', name: 'vavr', version: '0.10.3'
 }
 
 test {
