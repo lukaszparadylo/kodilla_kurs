@@ -2,7 +2,9 @@ package com.kodilla.stream.portfolio;
 
 import org.junit.jupiter.api.Test;
 
+import java.time.Instant;
 import java.time.LocalDate;
+import java.time.temporal.ChronoField;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,11 +23,9 @@ class BoardTestSuite {
         List<Task> numberOfTasksInProgress = project.getTaskLists().stream()
                 .filter(inProgressTasks::contains)
                 .flatMap(tl -> tl.getTasks().stream()).collect(toList());
-        //System.out.println(numberOfTasks.size());
         double tasksAverageInDays = numberOfTasksInProgress.stream()
-                .map(i-> i.getDeadline().getDayOfYear()-i.getCreated().getDayOfYear())
+                .map(i-> i.getDeadline().getLong(ChronoField.EPOCH_DAY)-i.getCreated().getLong(ChronoField.EPOCH_DAY))
                 .mapToDouble(n->n).average().getAsDouble();
-        //System.out.println(tasksAverageInDays);
         //Then
         assertEquals(3, numberOfTasksInProgress.size());
         assertEquals(18.33, tasksAverageInDays,0.1);
@@ -124,8 +124,8 @@ class BoardTestSuite {
                 "Refactor company logger to meet our needs",
                 user3,
                 user2,
-                LocalDate.now().minusDays(10),
-                LocalDate.now().plusDays(25));
+                LocalDate.now().minusDays(30),
+                LocalDate.now().plusDays(5));
         Task task5 = new Task("Optimize searching",
                 "Archive data searching has to be optimized",
                 user4,
