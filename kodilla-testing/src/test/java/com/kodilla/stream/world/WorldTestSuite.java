@@ -1,6 +1,7 @@
 package com.kodilla.stream.world;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -20,6 +21,10 @@ public class WorldTestSuite {
             this.allPeople = this.allPeople.add(randomPeopleQuantity);
         }
         return tempCountryList;
+    }
+    @BeforeEach
+    private void prepareData(){
+        allPeople = BigDecimal.ZERO;
     }
     @DisplayName("Wen is 0 people in all countries")
     @Test
