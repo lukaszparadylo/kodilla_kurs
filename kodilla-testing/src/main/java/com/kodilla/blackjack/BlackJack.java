@@ -21,7 +21,7 @@ public class BlackJack extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-
+    ///jakis komentaż
     @Override
     public void start(Stage primaryStage) throws Exception {
         BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, true, false);
