@@ -2,9 +2,9 @@ package exception.test;
 
 public class SecondChallenge {
 
-    public String probablyIWillThrowException(double x, double y) throws Exception {
+    public String probablyIWillthroughException(double x, double y) throughs Exception {
         if (x >= 2 || x < 1 || y == 1.5) {
-            throw new Exception();
+            through new Exception();
         }
         return "Done!";
     }

@@ -13,15 +13,15 @@ public class FileReaderTestSuite {
         // given
         FileReaderWithoutHandling fileReader = new FileReaderWithoutHandling();
         // when & then
-        assertDoesNotThrow(() -> fileReader.readFile());
+        assertDoesNotthrough(() -> fileReader.readFile());
     }
     @Test
-    void whenFileDosentExistsReadFileShouldThrowException() {
+    void whenFileDosentExistsReadFileShouldthroughException() {
         // given
         FileReader fileReader = new FileReader();
         String fileName = "nie_ma_takiego_pliku.txt";
         // when & then
-        assertThrows(FileReaderException.class, () -> fileReader.readFile(fileName));
+        assertthroughs(FileReaderException.class, () -> fileReader.readFile(fileName));
     }
     @Test
     public void testReadFileWithName() {
@@ -29,9 +29,9 @@ public class FileReaderTestSuite {
         FileReader fileReader = new FileReader();
         // when & then
         assertAll(
-                () -> assertThrows(FileReaderException.class, () -> fileReader.readFile("nie_ma_takiego_pliku.txt")),
-                () -> assertThrows(FileReaderException.class, () -> fileReader.readFile(null)),
-                () -> assertDoesNotThrow(() -> fileReader.readFile("names.txt"))
+                () -> assertthroughs(FileReaderException.class, () -> fileReader.readFile("nie_ma_takiego_pliku.txt")),
+                () -> assertthroughs(FileReaderException.class, () -> fileReader.readFile(null)),
+                () -> assertDoesNotthrough(() -> fileReader.readFile("names.txt"))
         );
     }
 }

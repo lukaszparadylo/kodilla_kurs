@@ -37,14 +37,14 @@ public class AirPorts {
         return listOfFlights;
     }
 
-    public List<String> findAllFlightFromChosenCityTrowAnotherCityToChosenCity(String startAirport, String endAirport){
+    public List<String> findAllFlightFromChosenCityThroughAnotherCityToChosenCity(String startAirport, String endAirport){
         List<String> listOfFlights = this.airportsNameAndFlights.entrySet().stream()
                 .filter(i->i.getKey()==startAirport)
                 .flatMap(j->j.getValue().entrySet().stream())
                 .filter(n->n.getKey().destination!=endAirport)
                 .map(g->g.getKey().destination)
                 .collect(Collectors.toList());
-        List<List<String>> listOfFlightThrowAnotherCity = new LinkedList<>();
+        List<List<String>> listOfFlightThroughAnotherCity = new LinkedList<>();
         List<String> listOfFlightTemp;
         for (String i : listOfFlights){
             listOfFlightTemp = this.airportsNameAndFlights.entrySet().stream()
@@ -52,10 +52,10 @@ public class AirPorts {
                     .flatMap(w->w.getValue().entrySet().stream())
                     .filter(t->t.getKey().destination!=startAirport)
                     .filter(o->o.getKey().destination==endAirport)
-                    .map(m->"Fly from "+startAirport+" to "+endAirport+" throw "+i+" Date "+m.getValue()+" Fly time "+m.getKey().flyTime.toString())
+                    .map(m->"Fly from "+startAirport+" to "+endAirport+" through "+i+" Date "+m.getValue()+" Fly time "+m.getKey().flyTime.toString())
                     .collect(Collectors.toList());
-            listOfFlightThrowAnotherCity.add(listOfFlightTemp);
+            listOfFlightThroughAnotherCity.add(listOfFlightTemp);
         }
-        return listOfFlightThrowAnotherCity.stream().flatMap(l->l.stream()).collect(Collectors.toList());
+        return listOfFlightThroughAnotherCity.stream().flatMap(l->l.stream()).collect(Collectors.toList());
     }
 }

@@ -14,7 +14,7 @@ public class FirstChallenge {
     }
 
     /**
-     * This main can throw an ArithmeticException!!!
+     * This main can through an ArithmeticException!!!
      * @param args
      */
     public static void main(String[] args) {

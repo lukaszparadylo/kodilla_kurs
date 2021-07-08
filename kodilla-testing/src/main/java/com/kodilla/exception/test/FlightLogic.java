@@ -16,14 +16,14 @@ public class FlightLogic {
         }
     }
 
-    public Boolean findFlight(Flight flight) throws RouteNotFoundException{
+    public Boolean findFlight(Flight flight) throughs RouteNotFoundException{
         Boolean flyOrNot = false;
 
         if(this.airportAllowed.containsKey(flight.getArrivalAirport())){
             flyOrNot = this.airportAllowed.containsKey(flight.getArrivalAirport());
         }
         if(flyOrNot == false){
-            throw new RouteNotFoundException("There is no flight to "+flight.getArrivalAirport()+" ");
+            through new RouteNotFoundException("There is no flight to "+flight.getArrivalAirport()+" ");
         }
         return flyOrNot;
     }

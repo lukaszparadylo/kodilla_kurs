@@ -16,7 +16,7 @@ public class Main {
         FlightMonitor.showFlights(flightsListFromChosenAirport);
         List<String> listOfFlyFromAirportToAirport = airPorts.findAllFlightsFromChosenAirportToChosenAirport("BERLIN", "WARSZAWA");
         FlightMonitor.showFlights(listOfFlyFromAirportToAirport);
-        List<String>listOfFlightFromChosenCityTrowAnotherCityToChosenCity = airPorts.findAllFlightFromChosenCityTrowAnotherCityToChosenCity("WARSZAWA", "KRAKOW");
-        FlightMonitor.showFlights(listOfFlightFromChosenCityTrowAnotherCityToChosenCity);
+        List<String>listOfFlightFromChosenCityThroughAnotherCityToChosenCity = airPorts.findAllFlightFromChosenCityThroughAnotherCityToChosenCity("WARSZAWA", "KRAKOW");
+        FlightMonitor.showFlights(listOfFlightFromChosenCityThroughAnotherCityToChosenCity);
     }
 }

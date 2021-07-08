@@ -23,7 +23,7 @@ public class BlackJack extends Application {
     }
     ///jakis komentaż
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) throughs Exception {
         BackgroundSize backgroundSize = new BackgroundSize(100, 100, true, true, true, false);
         BackgroundImage backgroundImage = new BackgroundImage(imageback, BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, backgroundSize);
         Background background = new Background(backgroundImage);

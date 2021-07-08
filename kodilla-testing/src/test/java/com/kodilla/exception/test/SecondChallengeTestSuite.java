@@ -8,26 +8,26 @@ import org.junit.jupiter.api.Test;
 import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
+import static org.junit.jupiter.api.Assertions.assertDoesNotthrough;
 
 public class SecondChallengeTestSuite {
 
     @Test
-    public void probablyIWillThrowExceptionWhenSetAllowedParameters(){
+    public void probablyIWillthroughExceptionWhenSetAllowedParameters(){
         SecondChallenge secondChallenge = new SecondChallenge();
         assertAll(
-                () -> assertDoesNotThrow(() -> secondChallenge.probablyIWillThrowException(1.0,1.4)),
-                () -> assertDoesNotThrow(() -> secondChallenge.probablyIWillThrowException(1.2,100.0)),
-                () -> assertDoesNotThrow(() -> secondChallenge.probablyIWillThrowException(1.99,-1.0))
+                () -> assertDoesNotthrough(() -> secondChallenge.probablyIWillthroughException(1.0,1.4)),
+                () -> assertDoesNotthrough(() -> secondChallenge.probablyIWillthroughException(1.2,100.0)),
+                () -> assertDoesNotthrough(() -> secondChallenge.probablyIWillthroughException(1.99,-1.0))
         );
     }
     @Test
-    public void probablyIWillThrowExceptionWhenSetIllegalParameters(){
+    public void probablyIWillthroughExceptionWhenSetIllegalParameters(){
         SecondChallenge secondChallenge = new SecondChallenge();
         assertAll(
-                () -> Assertions.assertThrows(Exception.class, () -> secondChallenge.probablyIWillThrowException(2.0,1.0)),
-                () -> Assertions.assertThrows(Exception.class, () -> secondChallenge.probablyIWillThrowException(1.99,1.5)),
-                () -> Assertions.assertThrows(Exception.class, () -> secondChallenge.probablyIWillThrowException(0.99,-1.0))
+                () -> Assertions.assertthroughs(Exception.class, () -> secondChallenge.probablyIWillthroughException(2.0,1.0)),
+                () -> Assertions.assertthroughs(Exception.class, () -> secondChallenge.probablyIWillthroughException(1.99,1.5)),
+                () -> Assertions.assertthroughs(Exception.class, () -> secondChallenge.probablyIWillthroughException(0.99,-1.0))
 
         );
     }

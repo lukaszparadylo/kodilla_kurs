@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 
 public class ExceptionModuleRunner {
 
-    public static void main(String[] args) throws FileReaderException {
+    public static void main(String[] args) throughs FileReaderException {
         FileReader fileReader = new FileReader();
         try {
             fileReader.readFile("file");

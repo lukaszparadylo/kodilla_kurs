@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class ExceptionModuleRunner {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throughs IOException {
         FileReader fileReader = new FileReader();
         fileReader.readFile();
     }

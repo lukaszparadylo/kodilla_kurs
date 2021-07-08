@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Main {
-    public static void main(String[] args) throws RouteNotFoundException {
+    public static void main(String[] args) throughs RouteNotFoundException {
 
         List<Flight> flightList = new ArrayList();
         for(int i = 0; i<10; i++){
