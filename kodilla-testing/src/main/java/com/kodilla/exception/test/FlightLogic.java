@@ -1,6 +1,4 @@
 package com.kodilla.exception.test;
-
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,19 +13,17 @@ public class FlightLogic {
             this.airportAllowed.put(i.getArrivalAirport(), true);
         }
     }
-
-    public Boolean findFlight(Flight flight) throughs RouteNotFoundException{
+    public Boolean findFlight(String airportName) throws RouteNotFoundException{
         Boolean flyOrNot = false;
 
-        if(this.airportAllowed.containsKey(flight.getArrivalAirport())){
-            flyOrNot = this.airportAllowed.containsKey(flight.getArrivalAirport());
+        if(this.airportAllowed.containsKey(airportName)){
+            flyOrNot = this.airportAllowed.containsKey(airportName);
         }
         if(flyOrNot == false){
-            through new RouteNotFoundException("There is no flight to "+flight.getArrivalAirport()+" ");
+            throw new RouteNotFoundException("There is no flight to "+airportName+" ");
         }
         return flyOrNot;
     }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -37,7 +33,6 @@ public class FlightLogic {
 
         return airportAllowed.equals(that.airportAllowed);
     }
-
     @Override
     public int hashCode() {
         return airportAllowed.hashCode();

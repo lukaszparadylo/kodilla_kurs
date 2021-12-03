@@ -1,6 +1,7 @@
 package com.kodilla.exception.test;
 
 public class Flight {
+
     private String departureAirport;
     private String arrivalAirport;
 
@@ -8,15 +9,12 @@ public class Flight {
         this.departureAirport = departureAirport;
         this.arrivalAirport = arrivalAirport;
     }
-
     public String getDepartureAirport() {
         return departureAirport;
     }
-
     public String getArrivalAirport() {
         return arrivalAirport;
     }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -28,7 +26,6 @@ public class Flight {
             return false;
         return arrivalAirport != null ? arrivalAirport.equals(flight.arrivalAirport) : flight.arrivalAirport == null;
     }
-
     @Override
     public int hashCode() {
         int result = departureAirport != null ? departureAirport.hashCode() : 0;
