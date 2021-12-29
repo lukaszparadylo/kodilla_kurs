@@ -10,8 +10,15 @@ public class Supplier implements ShoppingProcessor{
     protected String supplierAddress;
     protected String shopName;
 
-    public Supplier() {
+    public Supplier(String shopName, String supplierAddress) {
+        this.shopName = shopName;
+        this.supplierAddress = supplierAddress;
         productsList = new HashMap<>();
+    }
+    public Supplier(){
+        productsList = new HashMap<>();
+        this.shopName = "Default name";
+        this.supplierAddress = "Default address";
     }
     public void setShopName(String shopName) {
         this.shopName = shopName;
@@ -31,9 +38,6 @@ public class Supplier implements ShoppingProcessor{
         for (Map.Entry<Product, Integer> i : this.productsList.entrySet()){
             if(i.getKey().getProductName()==product){
                 return true;
-            }
-            else {
-                return false;
             }
         }
         return false;
