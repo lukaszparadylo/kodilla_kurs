@@ -2,7 +2,7 @@ package com.kodilla.good.patterns.challenges.flights;
 import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
-
+//
 public class AirPorts {
     private Map<String, Map<Fly, LocalDateTime>> airportsNameAndFlights;
 
